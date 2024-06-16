@@ -9,7 +9,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan("com")
-public class PersonConfig {
+public class DatabaseConfig {
 
     @Bean
     public DataSource dataSource() {
