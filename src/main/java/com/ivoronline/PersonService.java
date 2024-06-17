@@ -2,6 +2,7 @@ package com.ivoronline;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PersonService {
@@ -10,7 +11,9 @@ public class PersonService {
 
     public void insertRecords() {
         for (int age = 1; age <= 2; age++) {
+            if(age==2) { throw new RuntimeException("Exception"); }
             personRepository.save(new Person(0, "John", age));
+            System.out.println("Record inserted");
         }
     }
 
